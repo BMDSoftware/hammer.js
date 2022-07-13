@@ -70,7 +70,7 @@ export default class PointerEventInput extends Input {
     let storeIndex = inArray(store, ev.pointerId, 'pointerId');
 
     // start and mouse must be down
-    if (eventType & INPUT_START && (ev.button === 0 || isTouch)) {
+    if (eventType & INPUT_START && (ev.button === 0 || ev.button === 2 || isTouch)) {
       if (storeIndex < 0) {
         store.push(ev);
         storeIndex = store.length - 1;
